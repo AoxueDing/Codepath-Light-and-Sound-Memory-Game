@@ -43,7 +43,7 @@ const freqMap = {
 }
 function playTone(btn,len){ 
   o.frequency.value = freqMap[btn]
-  g.gain.setTargetAtTime(volume,context.currentTime + 0.05,0.025)
+  g.gain.setTargetAtTime(volume,context.currentTime + 0.05,0.025) 
   context.resume()
   tonePlaying = true
   setTimeout(function(){
@@ -94,6 +94,7 @@ function playSingleClue(btn){
 function playClueSequence(){
   guessCounter = 0;
   context.resume()
+  let totalDelay = 0
   let delay = nextClueWaitTime; //set delay to initial wait time
   for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
@@ -101,7 +102,8 @@ function playClueSequence(){
     delay += clueHoldTime 
     delay += cluePauseTime;
   }
-  
+  timer = TIME_PER_TURN
+  setTimeout(startTimer, totalDelay)
 }
 
 function loseGame(){
