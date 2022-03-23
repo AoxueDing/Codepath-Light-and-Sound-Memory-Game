@@ -31,6 +31,7 @@ function stopGame(){
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
+  clearInterval(myTimerVar);
 }
 
 // Sound Synthesis Functions
@@ -101,8 +102,6 @@ function playClueSequence(){
     delay += cluePauseTime;
   }
   
-  timer = TIME_PER_TURN
-  setTimeout(startTimer, totalDelay)
 }
 
 function loseGame(){
@@ -125,6 +124,7 @@ function guess(btn){
    if(pattern[guessCounter] == btn){
     //Guess was correct!
     if(guessCounter == progress){
+      clearInterval(myTimerVar);
       if(progress == pattern.length - 1){
         //GAME OVER: WIN!
         winGame();
