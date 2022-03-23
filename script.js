@@ -2,7 +2,7 @@
 const clueHoldTime = 1000; //how long to hold each clue's light/sound
 const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
-
+const TIME_PER_TURN = 20000;
 
 //Global Variables
 var pattern = [2, 2, 4, 3, 2, 1, 2, 4];
@@ -12,14 +12,13 @@ var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5;  //must be between 0.0 and 1.0
 var guessCounter = 0; 
-var curScore= 0; 
-var highScore= 0;
+var timer = TIME_PER_TURN; 
+var myTimerVar;
 
 function startGame(){
   //initialize game variables
   progress = 0;
   gamePlaying = true;
-  curScore = 0;
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
@@ -101,6 +100,9 @@ function playClueSequence(){
     delay += clueHoldTime 
     delay += cluePauseTime;
   }
+  
+  timer = TIME_PER_TURN
+  setTimeout(startTimer, totalDelay)
 }
 
 function loseGame(){
@@ -142,6 +144,30 @@ function guess(btn){
   }
 }
 
+function startTimer(){
+
+    if(gamePlaying){
+        myTimerVar = setInterval(myTimer, 100);
+        timer = TIME_PER_TURN
+    }
+}
+
+function myTimer(){
+    timer -= 100
+    document.getElementById("amtTime").innerHTML = timer / 1000;
+
+    // out of time
+    if( timer <= 0 ){
+        loseGame()
+        // end timer here, will make new one later
+        // todo: end timer
+        clearInterval(myTimerVar)
+        nextClueWaitTime = 1000
+    }
+    console.log("current time:" + timer + " inseconds: " + (timer/1000))
+
+
+}
 
 
 
