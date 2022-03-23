@@ -6,6 +6,7 @@ const nextClueWaitTime = 1000; //how long to wait before starting playback of th
 
 //Global Variables
 var pattern = [2, 2, 4, 3, 2, 1, 2, 4];
+var patternLength = 8;
 var progress = 0; 
 var gamePlaying = false;
 var tonePlaying = false;
@@ -116,22 +117,25 @@ function guess(btn){
   }
   
   // add game logic here
-  if (btn == pattern[guessCounter]) {
-    if (guessCounter == progress) {
-      progress++;
-      curScore = progress;
-      updateParagraph();
-      if (progress == patternLength) {
+   if(pattern[guessCounter] == btn){
+    //Guess was correct!
+    if(guessCounter == progress){
+      if(progress == pattern.length - 1){
+        //GAME OVER: WIN!
         winGame();
-        return;
+      }else{
+        //Pattern correct. Add next segment
+        progress++;
+        playClueSequence();
       }
-      playClueSequence();
-    } else {
+    }else{
+      //so far so good... check the next guess
       guessCounter++;
     }
-  } else {
+  }else{
+    //Guess was incorrect
+    //GAME OVER: LOSE!
     loseGame();
-    return;
   }
 }
 
