@@ -5,7 +5,6 @@ const nextClueWaitTime = 1000; //how long to wait before starting playback of th
 const TIME_PER_TURN = 20000;
 
 //Global Variables
-var pattern = [2, 2, 4, 3, 2, 1, 2, 4];
 var patternLength = 8;
 var progress = 0; 
 var gamePlaying = false;
@@ -17,6 +16,7 @@ var myTimerVar;
 
 function startGame(){
   //initialize game variables
+  var pattern = createPattern();
   progress = 0;
   gamePlaying = true;
   // swap the Start and Stop buttons
@@ -29,8 +29,8 @@ function stopGame(){
   //initialize game variables
   gamePlaying = false;
   // swap the Start and Stop buttons
-  document.getElementById("startBtn").classList.add("hidden");
-  document.getElementById("stopBtn").classList.remove("hidden");
+  document.getElementById("stopBtn").classList.add("hidden");
+  document.getElementById("startBtn").classList.remove("hidden");
   clearInterval(myTimerVar);
 }
 
@@ -167,8 +167,18 @@ function myTimer(){
         nextClueWaitTime = 1000
     }
     console.log("current time:" + timer + " inseconds: " + (timer/1000))
+}
+
+function createPattern(){
+  var numKeys = Object.keys(freqMap).length;
+  console.log(freqMap)
 
 
+  pattern = [];
+  for(var i=0; i < patternLength; i++){
+    pattern.push(Math.floor(1 + Math.random() * numKeys))
+  }
+  return pattern;
 }
 
 
