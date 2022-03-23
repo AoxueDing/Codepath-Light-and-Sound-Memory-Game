@@ -35,9 +35,6 @@ function stopGame(){
   clearInterval(myTimerVar);
 }
 
-function restart(){
-  startGame();
-}
 
 // Sound Synthesis Functions
 const freqMap = {
