@@ -5,6 +5,7 @@ const nextClueWaitTime = 1000; //how long to wait before starting playback of th
 const TIME_PER_TURN = 20000;
 
 //Global Variables
+var pattern;
 var patternLength = 8;
 var progress = 0; 
 var gamePlaying = false;
@@ -32,6 +33,10 @@ function stopGame(){
   document.getElementById("stopBtn").classList.add("hidden");
   document.getElementById("startBtn").classList.remove("hidden");
   clearInterval(myTimerVar);
+}
+
+function restart(){
+  startGame();
 }
 
 // Sound Synthesis Functions
@@ -63,6 +68,7 @@ function stopTone(){
   g.gain.setTargetAtTime(0,context.currentTime + 0.05,0.025)
   tonePlaying = false
 }
+
 
 // Page Initialization
 // Init Sound Synthesizer
@@ -158,15 +164,13 @@ function myTimer(){
     timer -= 100
     document.getElementById("amtTime").innerHTML = timer / 1000;
 
-    // out of time
+    // if the time is run out
     if( timer <= 0 ){
         loseGame()
-        // end timer here, will make new one later
-        // todo: end timer
+        // end the timer and make a new one 
         clearInterval(myTimerVar)
         nextClueWaitTime = 1000
     }
-    console.log("current time:" + timer + " inseconds: " + (timer/1000))
 }
 
 function createPattern(){
