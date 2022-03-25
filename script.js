@@ -103,7 +103,7 @@ function playClueSequence(){
   guessCounter = 0;
   context.resume()
   let totalDelay = 0
-  attempLeft = 0
+  attempLeft = 3
   let delay = nextClueWaitTime; //set delay to initial wait time
   for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
@@ -150,8 +150,13 @@ function guess(btn){
     }
   }else{
     //Guess was incorrect
+    attempLeft--; 
+    document.getElementById("attempLeft").innerHTML = attempLeft--;
     //GAME OVER: LOSE!
-    loseGame();
+    if (attempLeft < 1){
+      loseGame();
+    }
+    
   }
 }
 
@@ -166,7 +171,6 @@ function startTimer(){
 function myTimer(){
     timer -= 100
     document.getElementById("amtTime").innerHTML = timer / 1000;
-
     // if the time is run out
     if( timer <= 0 ){
         loseGame()
