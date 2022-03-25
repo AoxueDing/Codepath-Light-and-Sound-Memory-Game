@@ -1,3 +1,4 @@
+import swal from 'sweetalert';  
 // global constants
 const clueHoldTime = 1000; //how long to hold each clue's light/sound
 const cluePauseTime = 333; //how long to pause in between clues
@@ -126,7 +127,6 @@ function loseGame(){
 
 function winGame(){
   stopGame();
-  alertLost();
   alert("Game Over. You won.");
 }
 
