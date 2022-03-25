@@ -53,6 +53,22 @@ button {
     background: lightyellow;
 }
 
+#button5 {
+    background: lightgrey;
+}
+
+#button6 {
+    background: Aqua;
+}
+
+#button7 {
+    background: lightsalmon;
+}
+
+#button8 {
+    background: lightyellow;
+}
+
 #button1:active, #button1.lit {
     background: green;
 }
@@ -69,6 +85,21 @@ button {
     background: yellow;
 }
 
+#button5:active, #button5.lit {
+    background: orange;
+}
+
+#button6:active, #button6.lit {
+    background: blue;
+}
+
+#button7:active, #button7.lit {
+    background: red;
+}
+
+#button8:active, #button8.lit {
+    background: yellow;
+}
 
 
 /* images and videos max out at full width */
