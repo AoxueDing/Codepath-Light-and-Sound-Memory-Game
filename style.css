@@ -58,7 +58,7 @@ button {
 }
 
 #button6 {
-    background: Aqua;
+    background: BlueViolet  ;
 }
 
 #button7 {
@@ -66,7 +66,7 @@ button {
 }
 
 #button8 {
-    background: lightyellow;
+    background: RosyBrown ;
 }
 
 #button1:active, #button1.lit {
@@ -86,19 +86,19 @@ button {
 }
 
 #button5:active, #button5.lit {
-    background: orange;
+    background: SlateGray ;
 }
 
 #button6:active, #button6.lit {
-    background: blue;
+    background: Indigo;
 }
 
 #button7:active, #button7.lit {
-    background: red;
+    background: orange;
 }
 
 #button8:active, #button8.lit {
-    background: yellow;
+    background: SaddleBrown ;
 }
 
 

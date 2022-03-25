@@ -41,7 +41,11 @@ const freqMap = {
   1: 261.6,
   2: 329.6,
   3: 392,
-  4: 466.2
+  4: 466.2,
+  5: 440,
+  6: 349.23,
+  7: 500,
+  8: 300
 }
 function playTone(btn,len){ 
   o.frequency.value = freqMap[btn]
@@ -173,8 +177,6 @@ function myTimer(){
 function createPattern(){
   var numKeys = Object.keys(freqMap).length;
   console.log(freqMap)
-
-
   pattern = [];
   for(var i=0; i < patternLength; i++){
     pattern.push(Math.floor(1 + Math.random() * numKeys))
