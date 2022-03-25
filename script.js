@@ -123,6 +123,7 @@ function loseGame(){
   alert("Game Over. You lost.");
 }
 
+
 function winGame(){
   stopGame();
   alert("Game Over. You won.");

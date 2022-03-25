@@ -12,6 +12,11 @@
 
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
+    
+    <!-- edit alert -->
+     <script src="alert/dist/sweetalert-dev.js"></script>
+     <link rel="stylesheet" href="alert/dist/sweetalert.css">
+    
   </head>
   <body>
     <!-- this is the start of content -->
@@ -31,6 +36,12 @@
     <button id="stopBtn" onclick="stopGame()" class="hidden"> 
       Stop
     </button>
+    
+    <script type="text/javascript">
+    function JSalert(){
+	swal("A Basic JS alert by a plug-in");
+}
+</script>
     
     
     <p>Time left: <strong id="amtTime">20.0</strong></p>
