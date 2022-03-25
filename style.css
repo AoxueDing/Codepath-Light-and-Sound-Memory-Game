@@ -28,7 +28,13 @@ button {
   border-radius: 10px;
 }
 
-#gameButtonArea > button {
+#gameButtonArea1 > button {
+  width:200px;
+  height:200px;
+  margin:2px;
+}
+
+#gameButtonArea2 > button {
   width:200px;
   height:200px;
   margin:2px;
