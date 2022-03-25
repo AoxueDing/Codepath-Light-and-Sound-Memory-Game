@@ -194,7 +194,3 @@ function createPattern(){
 }
 
 
-
-
-
-console.log();
