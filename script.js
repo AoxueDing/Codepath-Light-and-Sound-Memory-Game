@@ -3,6 +3,7 @@ const clueHoldTime = 1000; //how long to hold each clue's light/sound
 const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
 const TIME_PER_TURN = 20000;
+const totalChance = 3
 
 //Global Variables
 var pattern;
@@ -14,12 +15,13 @@ var volume = 0.5;  //must be between 0.0 and 1.0
 var guessCounter = 0; 
 var timer = TIME_PER_TURN; 
 var myTimerVar;
-var attempLeft = 0;
+var numFail = 0;
 
 function startGame(){
   //initialize game variables
   var pattern = createPattern();
-  progress = 0;
+  progress = 0
+  var numFail = 0;
   gamePlaying = true;
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.add("hidden");
@@ -103,7 +105,6 @@ function playClueSequence(){
   guessCounter = 0;
   context.resume()
   let totalDelay = 0
-  attempLeft = 3
   let delay = nextClueWaitTime; //set delay to initial wait time
   for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
@@ -112,6 +113,8 @@ function playClueSequence(){
     delay += cluePauseTime;
   }
   timer = TIME_PER_TURN
+  numFail = 0
+  document.getElementById("attempLeft").innerHTML = totalChance;
   setTimeout(startTimer, totalDelay)
 }
 
@@ -150,10 +153,10 @@ function guess(btn){
     }
   }else{
     //Guess was incorrect
-    attempLeft--; 
-    document.getElementById("attempLeft").innerHTML = attempLeft--;
+    numFail++;
+    document.getElementById("attempLeft").innerHTML = totalChance - numFail ;
     //GAME OVER: LOSE!
-    if (attempLeft < 1){
+    if (totalChance - numFail < 1){
       loseGame();
     }
     
