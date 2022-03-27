@@ -38,26 +38,48 @@ The following **additional** features are implemented:
 - [ ] List anything else that you can get done to improve the app!
 
 ## Video Walkthrough (GIF)
+When user won the game, it should be like: 
+![](https://i.imgur.com/M1wAXsN.gif)
+When user failed 3 times, it should be like: 
+![](https://i.imgur.com/Dw3exff.gif)
+When user run out of time, it should be like: 
+![](https://i.imgur.com/DFHpn7y.gif)
 
-If you recorded multiple GIFs for all the implemented features, you can add them here:
-![](gif1-link-here)
-![](gif2-link-here)
-![](gif3-link-here)
-![](gif4-link-here)
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
-[YOUR ANSWER HERE]
-
+* First of all, I used a lot tutorials for html, css, and javascript:
+https://www.w3schools.com/js/
+https://www.w3schools.com/html/default.asp 
+https://www.w3schools.com/css/default.asp
+* I tried to customize the alert box 
+https://stackoverflow.com/questions/7853130/how-to-change-the-style-of-alert-box 
+  Then I found I need to install sweetalert
+  https://sweetalert.js.org/guides/ 
+  However, I still failed to customize it. 
+* Specifically place that I use outside resource : 
+    * how to center website: 
+        * https://www.w3schools.com/howto/howto_css_center_website.asp#:~:text=than%20500%20pixels.-,How%20To%20Center%20Your%20Website,page%2C%20add%20margin%3A%20auto%20. 
+    * how to make buttons: 
+        * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+    * how to use div: 
+        * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
-[YOUR ANSWER HERE]
+* First challenge I met is to understand how to connect html and javascript. In the past, I only used a single language at one time, and I do not  know the interconnectedness of two languages. When doing a project, it became a difficult task to control the content displayed on the page which written by html with Javascript. After I search online, I found that I can add JavaScript code in an HTML document by employing the dedicated HTML tag <script> that wraps around JavaScript code.
+    
+* The second challenge I met is how to implement functionality that player only loses after 3 mistakes (instead of on the first mistake). At the first, I used a variable named numOfChance and initialized it to be 3. Everytime when user make a mistake, numOfChance will decrement until it less than 1. When the bug showing up, the debug process is really painful. I need to figure where went wrong. After I found out the problem, when I restart the game, the chance of user will inherit from the last time, instead of 3, I start to fix my code. To solve this problem, I name an constant variable named total chance and initiablized it to be 3, and another variable named numFail to track the number of mistake. Then use the difference between these two variables to check if the user lose the game. When restart the game, since totalChance is a constant variable, it always be 3, and set numfail to 0. However, the problem is not solved. When I restart the game, it doesn't show up totalChance is 3 until user lose 1 time, it start to show totalChance is 2. I was really confused about this situation. Then I found I did not initialize totalChance in function playClueSequence(). I only initialize in function startGame(). After I fix all the problem, it works  properly. 
 
-3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
+
+
+3. What questions about web development do you have after completing your submission? 
+* I found it is difficult to spot bugs in an entire program. When the bug showing up, we need to check for all files such as html js and css. It really takes a lot of time. Is there any way to narrow the range that we need to check on? 
+* when writing a program, where to start? html, or js? 
+    
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
-
+* First of all, I want to make my webpage looks nicer. However, I found it is not easy to learn CSS which is important for webpage design. In my opnion, It is more about time and practice. In many situations, I need to try every options to see which one works. 
+* Secondly, I want to set the difficulty of the game. There will be the 3 mode, easy medium and hard based on the time and number of turns. The difficulty of this functionality is that how to clarify the difficulty of different level. I believe this need a lot research.  
+* The last one is to customize the alert box. I tried but did not work. 
 
 
 ## Interview Recording URL Link
