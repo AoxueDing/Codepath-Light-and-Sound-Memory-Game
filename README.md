@@ -38,11 +38,11 @@ The following **additional** features are implemented:
 - [ ] List anything else that you can get done to improve the app!
 
 ## Video Walkthrough (GIF)
-When user won the game, it should be like: 
+When user won the game, it should be like: <br/>
 ![](https://i.imgur.com/M1wAXsN.gif)
-When user failed 3 times, it should be like: 
+When user failed 3 times, it should be like: <br/>
 ![](https://i.imgur.com/Dw3exff.gif)
-When user run out of time, it should be like: 
+When user run out of time, it should be like: <br/>
 ![](https://i.imgur.com/DFHpn7y.gif)
 
 
@@ -83,8 +83,7 @@ https://stackoverflow.com/questions/7853130/how-to-change-the-style-of-alert-box
 
 
 ## Interview Recording URL Link
-
-[My 5-minute Interview Recording](your-link-here)
+https://loom.com/share/bfa9d809ae8c47c8a58e663e5a3794e2
 
 
 ## License
