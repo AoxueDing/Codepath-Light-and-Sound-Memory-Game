@@ -39,11 +39,11 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough (GIF)
 When user won the game, it should be like: <br/>
-![](https://i.imgur.com/M1wAXsN.gif)
+![](https://i.imgur.com/M1wAXsN.gif) <br/>
 When user failed 3 times, it should be like: <br/>
-![](https://i.imgur.com/Dw3exff.gif)
+![](https://i.imgur.com/Dw3exff.gif) <br/>
 When user run out of time, it should be like: <br/>
-![](https://i.imgur.com/DFHpn7y.gif)
+![](https://i.imgur.com/DFHpn7y.gif) <br/>
 
 
 ## Reflection Questions
